@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Make vim the default editor
+export EDITOR='vim';
+
+# Don't clear the screen after quitting a manual
+export MANPAGER='less -X';

@@ -1,0 +1,49 @@
+[alias]
+  s = status -s
+  st = status
+
+  # Switch to a branch, creating it if necessary
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+  # Remove branches that have been merged
+  clean = "!git branch --merged | grep -v '\\*\' | xargs -n 1 git branch -d"
+[core]
+  excludesfile = ~/.gitignore
+  untrackedCache = true
+[color]
+  ui = auto
+[color "diff"]
+  meta = yellow bold
+  commit = green bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+  newMoved = cyan
+  oldMoved = blue
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[help]
+  autocorrect = 1
+[push]
+  default = current
+  followtags = true
+[include]
+  path = ~/.gitconfig.local
+[fetch]
+  prune = true
+[stash]
+  showPatch = true
+[log]
+  date = relative
