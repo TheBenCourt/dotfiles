@@ -4,7 +4,7 @@ export PATH="$HOME/bin:$PATH";
 # Load shell dotfiles
 # * ~/.path can be used to extend $PATH
 # * ~/.extra can be used for things you don't want to commit
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,prompt,exports,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -35,3 +35,6 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
+if [ -z "$TMUX" ]; then
+  tmux attach -t default || tmux new -s default
+fi
