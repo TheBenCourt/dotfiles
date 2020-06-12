@@ -6,6 +6,7 @@ filetype plugin on
 syntax enable
 set showmatch
 set t_Co=256
+color ThemerVim
 
 filetype plugin indent on
 set expandtab
