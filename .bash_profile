@@ -9,6 +9,9 @@ for file in ~/.{path,prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# Don't add duplicate lines to history
+HISTCONTROL=ignoreboth
+
 # Case insensitive globbing
 shopt -s nocaseglob;
 
