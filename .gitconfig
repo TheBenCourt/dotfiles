@@ -3,6 +3,9 @@
   cm = commit
   co = checkout
   df = diff
+  f = fetch
+  fa = fetch --all
+  fat = fetch --all --tags
   s = status -s
   st = status
 
