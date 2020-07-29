@@ -17,6 +17,8 @@ set nowrap
 set autoindent
 set backspace=indent,eol,start
 
+set number relativenumber
+
 set backupdir=~/.vim/backups
 set backupdir=~/.vim/swaps
 set backupdir=~/.vim/undo
