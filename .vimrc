@@ -38,3 +38,17 @@ set visualbell
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.min.css,*.min.js
 set wildignore+=*/bower_components/*,*/node_modules/*
 set wildignore+=*/vendor/*,*/.git/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/dist/*
+
+let g:ale_linters = {
+\  'javascript': ['eslint'],
+\  'typescript': ['eslint', 'tsserver', 'tslint']
+\}
+
+let g:ale_fixers = {
+\  'javascript': ['prettier', 'eslint'],
+\  'typescript': ['prettier', 'eslint'],
+\  'scss': ['prettier'],
+\  'html': ['prettier']
+\}
+
+let g:ale_fix_on_save = 1
