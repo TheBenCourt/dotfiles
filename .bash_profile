@@ -46,3 +46,12 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export EDITOR=vim
+export CLICOLOR=1
+export TERM=xterm-256color
+export LC_ALL=en_GB.UTF-8
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export VISUAL=vim
+export LANG=en_GB.UTF-8
+export HISTCONTROL=ignoreboth

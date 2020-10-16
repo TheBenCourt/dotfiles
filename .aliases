@@ -5,7 +5,9 @@ alias ...='cd ../..'
 # Verbose file management
 alias mv='mv -v'
 alias rm='rm -v'
-alias cp='cp -v'
+alias cp='cp -vi'
+alias df='df -h'
+alias free='free -m'
 
 # Git
 alias push='git push'
