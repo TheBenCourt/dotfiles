@@ -1,5 +1,14 @@
-# Add '~/bin' to '$PATH'
-export PATH="$HOME/bin:$PATH";
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
 
 # Load shell dotfiles
 # * ~/.path can be used to extend $PATH
