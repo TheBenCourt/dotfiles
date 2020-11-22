@@ -47,8 +47,17 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
+# If TMUX is available attach to default session or start a new one
 if [ -z "$TMUX" ]; then
   tmux attach -t default || tmux new -s default
+fi
+
+# If powerline is available then use it
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
 fi
 
 # Load NVM

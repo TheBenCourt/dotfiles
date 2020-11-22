@@ -46,6 +46,8 @@
 [push]
   default = current
   followtags = true
+[pull]
+  ff = only
 [include]
   path = ~/.gitconfig.local
 [fetch]
